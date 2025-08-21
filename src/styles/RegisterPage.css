@@ -1,0 +1,68 @@
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f8e9e9, #f5d7c6, #eaccc5);
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+
+.register-container {
+  background: #fffaf8;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.register-container h2 {
+  font-size: 26px;
+  color: #8b5e3c;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-container input {
+  padding: 12px 15px;
+  border: 1px solid #e5cfcf;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.register-container input:focus {
+  border-color: #d8a48f;
+  outline: none;
+  box-shadow: 0 0 6px rgba(216, 164, 143, 0.4);
+}
+
+.register-container button {
+  padding: 12px;
+  background: linear-gradient(135deg, #d8a48f, #c08552);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.register-container button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.register-container button:active {
+  transform: scale(0.97);
+}

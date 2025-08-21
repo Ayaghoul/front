@@ -1,0 +1,175 @@
+:root {
+  --nude-bg: #fdf6f0;
+  --nude-card: #fffaf7;
+  --nude-accent: #d8a7b1;
+  --nude-accent-dark: #b07d87;
+  --nude-brown: #8d6e63;
+  --nude-text: #4e342e;
+  --nude-border: #e0cfc6;
+}
+
+/* === Conteneur principal === */
+.admin-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: var(--nude-card);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(141, 110, 99, 0.15);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.admin-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--nude-text);
+  font-size: 2rem;
+  border-bottom: 2px solid var(--nude-border);
+  padding-bottom: 10px;
+}
+
+/* === Formulaire === */
+.admin-form {
+  display: flex;
+  flex-direction: column; /* 👉 un champ en dessous de l’autre */
+  gap: 15px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: var(--nude-bg);
+  border-radius: 12px;
+  border: 1px solid var(--nude-border);
+}
+
+.admin-form input[type="text"],
+.admin-form input[type="number"],
+.admin-form input[type="file"] {
+  padding: 12px;
+  border: 1px solid var(--nude-border);
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.admin-form input:focus {
+  border-color: var(--nude-accent);
+}
+
+.admin-form button {
+  padding: 12px;
+  background: linear-gradient(
+    135deg,
+    var(--nude-accent),
+    var(--nude-accent-dark)
+  );
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.admin-form button:hover {
+  background: linear-gradient(
+    135deg,
+    var(--nude-accent-dark),
+    var(--nude-brown)
+  );
+  transform: translateY(-2px);
+}
+
+/* === Liste des produits === */
+.admin-container h2 {
+  margin-bottom: 15px;
+  color: var(--nude-brown);
+}
+
+/* Grille des cartes */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Carte produit */
+.product-item {
+  background: #fff;
+  border: 1px solid var(--nude-border);
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.product-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--nude-border);
+}
+
+.product-item h3 {
+  font-size: 1.2rem;
+  color: var(--nude-text);
+  margin: 8px 0;
+}
+
+.product-item p {
+  margin: 5px 0;
+  color: var(--nude-brown);
+}
+
+/* === Boutons === */
+.product-actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.product-actions button {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Modifier */
+.product-actions button:first-child {
+  background: linear-gradient(
+    135deg,
+    var(--nude-accent),
+    var(--nude-accent-dark)
+  );
+  color: white;
+}
+
+.product-actions button:first-child:hover {
+  background: linear-gradient(
+    135deg,
+    var(--nude-accent-dark),
+    var(--nude-brown)
+  );
+}
+
+/* Supprimer */
+.product-actions button:last-child {
+  background: linear-gradient(135deg, var(--nude-brown), #5d4037);
+  color: white;
+}
+
+.product-actions button:last-child:hover {
+  background: linear-gradient(135deg, #5d4037, #3e2723);
+}

@@ -1,0 +1,32 @@
+.home-container {
+  background-color: #fff5e6;
+  min-height: 100vh;
+  padding: 24px;
+  font-family: "Arial", sans-serif;
+}
+
+.hero-section {
+  background: linear-gradient(120deg, #fff5e6, #faf8f5);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hero-section h1 {
+  color: #8c6a5b;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.hero-section p {
+  color: #c8a68c;
+  font-size: 1rem;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}

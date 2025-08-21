@@ -1,0 +1,78 @@
+/* CartPage.css */
+
+.cart-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #fdfaf7, #f7e8df); /* dégradé nude */
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(139, 69, 19, 0.1); /* ombre douce */
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.cart-page h2 {
+  font-size: 2rem;
+  color: #6d4c41; /* brun nude */
+  margin-bottom: 15px;
+}
+
+.cart-page p {
+  font-size: 1.1rem;
+  color: #a1887f; /* nude clair */
+  margin-bottom: 20px;
+}
+
+/* Quand le panier contient des articles (à prévoir pour plus tard) */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff8f5;
+  padding: 12px 18px;
+  border: 1px solid #f0e0d6;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cart-item:hover {
+  transform: scale(1.02);
+  background: #fdf3ef;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cart-item-name {
+  flex: 1;
+  margin-left: 15px;
+  font-weight: 500;
+  color: #5d4037;
+}
+
+.cart-item-price {
+  font-weight: bold;
+  color: #8d6e63;
+}
+
+/* Bouton passer commande */
+.checkout-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #eac9b3, #d8b6a4); /* nude rose dégradé */
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background: linear-gradient(135deg, #d8b6a4, #c09e8f);
+}

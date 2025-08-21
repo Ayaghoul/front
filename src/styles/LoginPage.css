@@ -1,0 +1,67 @@
+body {
+  background: linear-gradient(135deg, #fdfaf7, #f7e8df); /* fond nude dégradé */
+  font-family: "Poppins", sans-serif;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 40px;
+  background: #fff8f5;
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(139, 69, 19, 0.15);
+  text-align: center;
+}
+
+.login-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #6d4c41; /* brun doux */
+}
+
+/* Formulaire */
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-container input {
+  padding: 12px 16px;
+  border: 1px solid #e0cfc2;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.login-container input:focus {
+  border-color: #d8b6a4;
+  box-shadow: 0 0 8px rgba(216, 182, 164, 0.5);
+}
+
+/* Bouton */
+.login-container button {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  background: linear-gradient(135deg, #eac9b3, #d8b6a4);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.login-container button:hover {
+  background: linear-gradient(135deg, #d8b6a4, #c09e8f);
+  transform: scale(1.02);
+}
+
+/* Message d'erreur ou alert */
+.error-message {
+  margin-top: 10px;
+  color: #b85c5c;
+  font-size: 0.9rem;
+}
