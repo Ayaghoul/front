@@ -1,0 +1,26 @@
+.footer {
+  background-color: #f5f0ec; /* لون خلفية ناعم */
+  color: #5c4a3d; /* لون نص بني دافئ */
+  padding: 30px 0;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 1px solid #e0d6c3;
+}
+
+.footer-container h4 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #5c4a3d;
+}
+
+.footer-container p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #7a6754;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #9b8b7a;
+}

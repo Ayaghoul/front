@@ -17,6 +17,7 @@ export const addProduct = (newProduct) => API.post("/products", newProduct);
 export const updateProduct = (id, updatedProduct) =>
   API.put(`/products/${id}`, updatedProduct);
 export const deleteProduct = (id) => API.delete(`/products/${id}`);
+export const fetchOrders = () => API.get("/orders/myorders");
 
 // Auth
 export const registerUser = (data) => API.post("/users/register", data);

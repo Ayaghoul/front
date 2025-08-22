@@ -1,59 +1,84 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Navbar.css";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const navigate = useNavigate();
+  const [userRole, setUserRole] = useState(null); // "client", "admin" ou null
 
+  // Récupération du rôle depuis localStorage
   useEffect(() => {
-    // Exemple : récupérer info admin depuis localStorage
-    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-    if (userInfo && userInfo.isAdmin) {
-      setIsAdmin(true);
-    }
+    const storedRole = localStorage.getItem("role"); 
+    if (storedRole) setUserRole(storedRole);
   }, []);
+
+  // Déconnexion
+  const handleLogout = () => {
+    localStorage.removeItem("role");
+    setUserRole(null);
+    navigate("/");
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-     
+        {/* Logo */}
         <Link to="/" className="logo">
           <img src={logo} alt="logo" className="logo-img" />
           <span>BijouShop</span>
         </Link>
 
-        
         <ul className="nav-links">
+          {/* Toujours Accueil */}
           <li>
             <Link to="/">Accueil</Link>
           </li>
-         
-          {!isAdmin && (
-            <li>
-              <Link to="/admin/products">Produits</Link>
-            </li>
+
+          {/* Non connecté */}
+          {!userRole && (
+            <>
+              <li>
+                <Link to="/login">Connexion</Link>
+              </li>
+              <li>
+                <Link to="/register">Inscription</Link>
+              </li>
+            </>
           )}
 
-          <li>
-            <Link to="/login">Connexion</Link>
-          </li>
-          <li>
-            <Link to="/register" className="btn-register">
-              Inscription
-            </Link>
-          </li>
-        </ul>
+          {/* Client connecté */}
+          {userRole === "client" && (
+            <>
+              
+              <li>
+                <button className="btn-nav" onClick={handleLogout}>
+                  Déconnexion
+                </button>
+              </li>
+            </>
+          )}
 
-       
-        <div className="cart">
-          <Link to="/cart">🛒</Link>
-        </div>
+          {/* Admin connecté */}
+          {userRole === "admin" && (
+            <>
+              <li>
+                <Link to="/admin/products">Produits</Link>
+              </li>
+              <li>
+                <Link to="/admin/orders">Orders</Link>
+              </li>
+              <li>
+                <button className="btn-nav" onClick={handleLogout}>
+                  Déconnexion
+                </button>
+              </li>
+            </>
+          )}
+        </ul>
       </div>
     </nav>
   );
 };
 
 export default Navbar;
-
-

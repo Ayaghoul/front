@@ -262,12 +262,43 @@ const AdminProductsPage = () => {
         <ul className="product-list">
           {products.map((p) => (
             <li key={p._id} className="product-item">
-              <strong>{p.name}</strong> - {p.price} TND - Stock:{" "}
-              {p.countInStock}
-              {p.image && <img src={p.image} alt={p.name} width="80" />}
-              <div>
-                <button onClick={() => handleEdit(p)}>Modifier</button>
-                <button onClick={() => handleDelete(p._id)}>Supprimer</button>
+              <div className="flex items-center gap-4">
+                {p.image && (
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    width="80"
+                    className="rounded shadow"
+                  />
+                )}
+                <div className="flex-1">
+                  <strong>{p.name}</strong> - {p.price} TND
+                  <div>
+                    <span
+                      style={{ color: p.countInStock > 0 ? "green" : "red" }}
+                    >
+                      {p.countInStock > 0
+                        ? `En stock: ${p.countInStock}`
+                        : "Rupture de stock"}
+                    </span>
+                  </div>
+                </div>
+                <div className="product-actions">
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => handleEdit(p)}
+                  >
+                    Modifier
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={() => handleDelete(p._id)}
+                  >
+                    Supprimer
+                  </button>
+                </div>
               </div>
             </li>
           ))}

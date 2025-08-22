@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import CartPage from "./pages/CartPage";
 import AdminProductsPage from "./pages/AdminProductsPage";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/account" element={<h1>👤 Espace Client</h1>} />
         </Routes>
       </ErrorBoundary>
+       <Footer/>
     </>
   );
 };
